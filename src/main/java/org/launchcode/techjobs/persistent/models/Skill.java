@@ -3,6 +3,7 @@ package org.launchcode.techjobs.persistent.models;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,13 +18,12 @@ public class Skill extends AbstractEntity {
 //    @JoinColumn(name="jobs_id")
     private List<Job> jobs = new ArrayList<>();
 
-    public Skill(String description, List<Job> jobs) {
-
-        this.description = description;
-        this.jobs=jobs;
+    public Skill() {
     }
 
-    public Skill() {
+    public Skill(String description, List<Job> jobs) {
+        this.description = description;
+        this.jobs = jobs;
     }
 
     public String getDescription() {

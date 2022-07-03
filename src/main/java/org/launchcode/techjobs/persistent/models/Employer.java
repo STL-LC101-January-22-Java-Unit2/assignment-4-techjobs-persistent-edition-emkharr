@@ -18,7 +18,6 @@ public class Employer extends AbstractEntity {
 
     @Size(min=2, max=250)
     @NotBlank
-    @NotNull
     private String location;
 
     public Employer(String location) {
@@ -34,5 +33,13 @@ public class Employer extends AbstractEntity {
 
     public void setLocation(String location) {
         this.location = location;
+    }
+
+    public List<Job> getJobs() {
+        return jobs;
+    }
+
+    public void setJobs(List<Job> jobs) {
+        this.jobs = jobs;
     }
 }
